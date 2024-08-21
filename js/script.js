@@ -1,59 +1,63 @@
-const cartas = document.querySelectorAll('.carta');
-var cartaVirada = false;
-var primeiraCarta, segundaCarta;
-var bloquearTabuleiro = false; //bloqueia o tabuleiro enquanto confere cartas
+const cards = document.querySelectorAll('.carta');
+
+let cartaVirada = false;
+let bloquearTabuleiro = false;
+let primeiraCarta, segundaCarta;
 
 function flipCard() {
+    if (bloquearTabuleiro) return;
+    if (this === primeiraCarta) return;
 
-  if (bloquearTabuleiro) return; //impede acoes
-  if (this === primeiraCarta) return;
-  if (this.classList.contains('matched')) return; //nao deixa pares achados continuarem
+    this.classList.add('flip');
 
-  this.classList.add('flip');
-  if(!cartaVirada){
-    cartaVirada = true;
-    primeiraCarta = this;
-  }
-  else{
-    cartaVirada = false;
+    if (!cartaVirada) {
+        // first click
+        cartaVirada = true;
+        primeiraCarta = this;
+
+        return;
+    }
+
+    // second click
     segundaCarta = this;
 
-    checkMatch(); //verifica as duas cartas
-  }
+    confirmarDupla();
 }
-    function checkMatch(){
-      bloquearTabuleiro = true;
-     
-      if(primeiraCarta.dataset.value === segundaCarta.dataset.value){
-        disableCards(); //desativa as cartas se forem iguais
-      }
-      else{
-        unFlipCards(); //desvira
-      }
-    }
 
-    function disableCards(){
-      primeiraCarta.classList.add('matched');
-      segundaCarta.classList.add('matched');
-      
-      primeiraCarta.addEventListener('click', flipCard);
-      segundaCarta.addEventListener('click', flipCard);
+function confirmarDupla() {
+    let isMatch = primeiraCarta.dataset.framework === segundaCarta.dataset.framework;
 
-      resetBoard();
-    }
+    isMatch ? tirarJogo() : unflipCards();
+}
 
-    function unFlipCards() {
-      setTimeout(() => {
-        primeiraCarta.classList.remove('flip'); //desvira a primeira
-        segundaCarta.classList.remove('flip'); //desvira a segunda
+function tirarJogo() {
+    primeiraCarta.removeEventListener('click', flipCard);
+    segundaCarta.removeEventListener('click', flipCard);
+
+    resetBoard();
+}
+
+function unflipCards() {
+    bloquearTabuleiro = true;
+
+    setTimeout(() => {
+        primeiraCarta.classList.remove('flip');
+        segundaCarta.classList.remove('flip');
 
         resetBoard();
-      }, 1000); //1s pra carta desvirar
-    }
+    }, 1500);
+}
 
-    function resetBoard(){ //reseta a jogada pra continuar
-      [cartaVirada, bloquearTabuleiro, primeiraCarta, segundaCarta] = [false, false, null, null];
-    }
+function resetBoard() {
+    [cartaVirada, bloquearTabuleiro] = [false, false];
+    [primeiraCarta, segundaCarta] = [null, null];
+}
 
-  
-cartas.forEach(carta => carta.addEventListener('click', flipCard));
+(function shuffle() {
+    cards.forEach(card => {
+        let posAleatoria = Math.floor(Math.random() * 12);
+        card.style.order = posAleatoria;
+    });
+})();
+
+cards.forEach(card => card.addEventListener('click', flipCard));

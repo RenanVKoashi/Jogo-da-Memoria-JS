@@ -1,88 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da memória</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Jogo da Memoria</h1>
-    <div class="jogoMemoria">
-    <!-- Primeira fileira de cartas -->
-    <div class="primeirafileira">
-        <div class="carta" data-value="vscode">
-            <img class="faceCarta" alt="vscode" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />            
-        </div>
-
-        <div class="carta" data-value="github">
-            <img class="faceCarta" alt="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
-
-        <div class="carta" data-value="jenkins">
-            <img class="faceCarta" alt="jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />        
-        </div>
+  <section class="jogoMemoria">
+    <div class="carta" data-framework="aurelia">
+        <img class="frente-carta" alt="vscode" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />      
+    </div>
+    <div class="carta" data-framework="aurelia">
+        <img class="frente-carta" alt="vscode" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
     </div>
 
-    <!-- Segunda fileira de cartaz -->
-    <div class="segundaFileira">
-        <div class="carta" data-value="javascript">
-            <img class="faceCarta" alt="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
-
-        <div class="carta" data-value="rocksdb">
-            <img class="faceCarta" alt="rocksdb" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rocksdb/rocksdb-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
-
-        <div class="carta" data-value="vscode">
-            <img class="faceCarta" alt="vscode" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
-            <img alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />        
-        </div>
+    <div class="carta" data-framework="vue">
+        <img class="frente-carta" alt="jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" /> 
+    </div>
+    <div class="carta" data-framework="vue">
+        <img class="frente-carta" alt="jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" /> 
     </div>
 
-    <!-- Terceira fileira de cartaz -->
-    <div class="terceiraFileira">
-        <div class="carta" data-value="javascript">
-            <img class="faceCarta" alt="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
-
-        <div class="carta" data-value="github">
-            <img class="faceCarta" alt="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
-
-        <div class="carta" data-value="linux">
-            <img class="faceCarta" alt="linux" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
+    <div class="carta" data-framework="angular">
+        <img class="frente-carta" alt="rocksdb" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rocksdb/rocksdb-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
+    </div>
+    <div class="carta" data-framework="angular">
+        <img class="frente-carta" alt="rocksdb" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rocksdb/rocksdb-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
     </div>
 
-    <!-- Quarta fileira de cartaz -->
-    <div class="quartaFileira">
-        <div class="carta" data-value="jenkins">
-            <img class="faceCarta" alt="jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />          
-        </div>
-
-        <div class="carta" data-value="rocksdb">
-            <img class="faceCarta" alt="rocksdb" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rocksdb/rocksdb-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
-
-        <div class="carta" data-value="linux">
-            <img class="faceCarta" alt="linux" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
-            <img class="versoCarta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
-        </div>
+    <div class="carta" data-framework="ember">
+        <img class="frente-carta" alt="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
+    </div>
+    <div class="carta" data-framework="ember">
+        <img class="frente-carta" alt="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
     </div>
 
+    <div class="carta" data-framework="backbone">
+        <img class="frente-carta" alt="linux" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
     </div>
-          
-    <script src="js/script.js"></script>
+    <div class="carta" data-framework="backbone">
+        <img class="frente-carta" alt="linux" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />   
+    </div>
+
+    <div class="carta" data-framework="react">
+        <img class="frente-carta" alt="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
+    </div>
+    <div class="carta" data-framework="react">
+        <img class="frente-carta" alt="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+        <img class="verso-carta" alt="verso" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg" />
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
