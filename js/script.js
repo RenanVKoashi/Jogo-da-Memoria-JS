@@ -4,7 +4,7 @@ let cartaVirada = false;
 let bloquearTabuleiro = false;
 let primeiraCarta, segundaCarta;
 
-function flipCard() {
+function virarCartas() {
     if (bloquearTabuleiro) return;
     if (this === primeiraCarta) return;
 
@@ -27,17 +27,17 @@ function flipCard() {
 function confirmarDupla() {
     let isMatch = primeiraCarta.dataset.framework === segundaCarta.dataset.framework;
 
-    isMatch ? tirarJogo() : unflipCards();
+    isMatch ? tirarJogo() : desvirarCartas();
 }
 
 function tirarJogo() {
-    primeiraCarta.removeEventListener('click', flipCard);
-    segundaCarta.removeEventListener('click', flipCard);
+    primeiraCarta.removeEventListener('click', virarCartas);
+    segundaCarta.removeEventListener('click', virarCartas);
 
     resetBoard();
 }
 
-function unflipCards() {
+function desvirarCartas() {
     bloquearTabuleiro = true;
 
     setTimeout(() => {
@@ -60,4 +60,4 @@ function resetBoard() {
     });
 })();
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach(card => card.addEventListener('click', virarCartas));
